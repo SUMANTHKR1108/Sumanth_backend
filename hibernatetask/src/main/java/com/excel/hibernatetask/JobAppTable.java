@@ -1,9 +1,13 @@
 package com.excel.hibernatetask;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +23,10 @@ public class JobAppTable {
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	
 	private int ApplId;
-	private int jobId;
-	private int frelencerId;
+	@OneToMany
+	private List<JobPostingTable> applications ;
+	@OneToOne
+	private UserTable users;
 	private String coverLetter;
 	private String status;
 	private String applied_at;

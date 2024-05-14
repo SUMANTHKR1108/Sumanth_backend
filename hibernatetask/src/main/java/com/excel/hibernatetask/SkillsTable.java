@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,10 +19,11 @@ import lombok.Setter;
 public class SkillsTable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="skill_id")
-	
-private int skillId;
-	@Column(name="name")
+	private int skillId;
+	@ManyToOne
+	private UserTable users;
+
+
 private String name;
 
 }

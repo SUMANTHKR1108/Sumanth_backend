@@ -5,7 +5,8 @@ package com.excel.hibernatetask;
 	import jakarta.persistence.GeneratedValue;
 	import jakarta.persistence.GenerationType;
 	import jakarta.persistence.Id;
-	import lombok.AllArgsConstructor;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 	import lombok.Getter;
 	import lombok.NoArgsConstructor;
 	import lombok.Setter;
@@ -20,7 +21,8 @@ package com.excel.hibernatetask;
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int NotificationId;
-		private int UserId;
+		@ManyToOne
+		private UserTable users;
 		private String Message;
 		private String isRead;
 		}
