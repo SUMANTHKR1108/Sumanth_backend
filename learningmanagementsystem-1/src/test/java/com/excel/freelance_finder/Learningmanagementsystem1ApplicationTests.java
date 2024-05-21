@@ -1,10 +1,10 @@
-package com.excel.demo;
+package com.excel.freelance_finder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LearningmanagementsystemApplicationTests {
+class Learningmanagementsystem1ApplicationTests {
 
 	@Test
 	void contextLoads() {
