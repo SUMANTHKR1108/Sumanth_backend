@@ -8,17 +8,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class JobPostingDto {
 
-	private Integer postingId;
-	private String titale;
+	private String clientEmail;
+	private String jobId;
+	private String titel;
 	private String description;
-	private String skillsRequerd;
+	private String skillsRequired;
 	private String budget;
-	private LocalDate createdAt;
+	private LocalDate postingAt;
+	
 }

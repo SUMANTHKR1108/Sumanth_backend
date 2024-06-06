@@ -1,9 +1,10 @@
-package com.excel.freelance_finder.entity;
+ package com.excel.freelance_finder.entity;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -16,28 +17,32 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Freelancer {
-
+public class ClientUser {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer freelancertId;
+	private Integer clientId;
+	
 	private String firstName;
 	private String lastName;
 	private Long phone;
-	private String freelancerEmail;
+	
+	@Column(unique = true)
+	private String clientEmail;
 	private String gender;
 	private LocalDate dateOfBirth;
 	private String password;
-	
-	
 
-	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "freelancer")
-	private List<JobApplication> jobAppliers;
+
 	
-}
+	
+	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "clientUser")
+	private List<JobPosting> jobPosting;
+	
+ }

@@ -1,13 +1,12 @@
-package com.excel.freelance_finder.repository;
+package com.excel.freelance_finder.Repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.excel.freelance_finder.entity.Client;
+import com.excel.freelance_finder.entity.ClientUser;
 
-public interface ClientRepository extends JpaRepository<Client, Integer>{
-	Optional<Client>  findByEmail(String email);
+public interface ClientRepository extends JpaRepository<ClientUser, Integer> {
 
-	
+	Optional<ClientUser> findByClientEmail(String clientEmail);
 }
